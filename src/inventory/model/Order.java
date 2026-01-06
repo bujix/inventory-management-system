@@ -4,7 +4,9 @@ import java.time.LocalDate;
 
 /**
  * Order sınıfı, sistemde oluşturulan bir siparişi temsil eder.
- * Bir ürün, sipariş miktarı ve sipariş tarihi bilgilerini içerir.
+ * Sipariş edilen ürün, miktar ve tarih bilgilerini içerir.
+ *
+ * Bu sınıf Inventory ile composition ilişkisi içerisindedir.
  */
 public class Order {
 
