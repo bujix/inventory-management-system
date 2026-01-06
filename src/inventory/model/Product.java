@@ -23,40 +23,4 @@ public class Product implements Storable {
      */
     public Product(String id, String name, double price, int stockQuantity) {
         this.id = id;
-        this.name = name;
-        this.price = price;
-        this.stockQuantity = stockQuantity;
-    }
-
-    // Getters and setters (Encapsulation)
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getStockQuantity() {
-        return stockQuantity;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    /**
-     * Updates the stock quantity by the given amount.
-     *
-     * @param amount amount to add or remove
-     */
-    @Override
-    public void updateStock(int amount) {
-        this.stockQuantity += amount;
-    }
-}
+        this.
