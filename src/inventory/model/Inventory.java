@@ -4,20 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Inventory sınıfı, sistemdeki ürünleri yönetmekten sorumludur.
- * Ürün ekleme, silme, arama ve düşük stok kontrolü işlemlerini sağlar.
+ * Inventory sınıfı, sistemdeki ürünleri ve siparişleri yönetmekten sorumludur.
+ * Ürün ekleme, silme, arama, düşük stok kontrolü ve sipariş takibi işlemlerini sağlar.
  *
  * Bu sınıf composition (bileşim) prensibini gösterir.
  */
 public class Inventory {
 
     private List<Product> products;
+    private List<Order> orders;
 
     /**
      * Boş bir envanter oluşturur.
      */
     public Inventory() {
         this.products = new ArrayList<>();
+        this.orders = new ArrayList<>();
     }
 
     /**
@@ -68,5 +70,23 @@ public class Inventory {
             }
         }
         return lowStock;
+    }
+
+    /**
+     * Envantere yeni bir sipariş ekler.
+     *
+     * @param order eklenecek sipariş
+     */
+    public void addOrder(Order order) {
+        orders.add(order);
+    }
+
+    /**
+     * Tüm siparişleri döndürür.
+     *
+     * @return sipariş listesi
+     */
+    public List<Order> getOrders() {
+        return orders;
     }
 }
