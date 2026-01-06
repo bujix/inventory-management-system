@@ -8,6 +8,7 @@ import inventory.model.Product;
  * Ürünlerin stok artırma ve azaltma işlemleri bu sınıf üzerinden yapılır.
  *
  * Bu sınıf, business logic'in model katmanından ayrılmasını sağlar.
+ * Böylece kodun test edilebilirliği ve sürdürülebilirliği artırılmış olur.
  */
 public class StockManager {
 

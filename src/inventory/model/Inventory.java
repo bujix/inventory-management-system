@@ -28,7 +28,9 @@ public class Inventory {
      * @param product eklenecek ürün
      */
     public void addProduct(Product product) {
-        products.add(product);
+        if (product != null) {
+            products.add(product);
+        }
     }
 
     /**
