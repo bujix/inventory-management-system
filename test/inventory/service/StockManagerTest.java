@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for StockManager.
+ * StockManager sınıfı için birim testleri içerir.
+ * Stok artırma ve azaltma senaryoları test edilmektedir.
  */
 public class StockManagerTest {
 
