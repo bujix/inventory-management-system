@@ -64,3 +64,18 @@ Geliştirme süreci boyunca anlamlı commit mesajları ile
 versiyon kontrolü sağlanmıştır.
 
 Görev takibi için Github Projects üzerinde Kanban board kullanılmıştır.
+
+---
+
+## 7. Demo ve Uygulamanın Çalıştırılması
+
+Demo sırasında uygulama kendi bilgisayarım üzerinde çalıştırılmıştır.
+Proje yapısı ve sınıflar incelenmiş, stok yönetimi ve iş kuralları
+kod üzerinden gösterilmiştir.
+
+StockManager sınıfı üzerinden stok artırma ve azaltma işlemleri
+açıklanmış, Inventory sınıfının ürün ve sipariş yönetimi
+nasıl yaptığı anlatılmıştır.
+
+Ayrıca JUnit test sınıfları gösterilerek
+stok işlemlerinin test edildiği belirtilmiştir.
