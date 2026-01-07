@@ -2,6 +2,9 @@ package inventory.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 /**
  * Inventory sınıfı, sistemdeki ürünleri ve siparişleri yönetmekten sorumludur.
@@ -106,4 +109,30 @@ public class Inventory {
     public List<Order> getOrders() {
         return orders;
     }
+    /**
+ * Envanterdeki tüm ürünleri döndürür.
+ *
+ * @return ürün listesi
+ */
+public List<Product> getProducts() {
+    return products;
+}
+/**
+ * Ürünleri txt dosyasına kaydeder.
+ */
+public void saveToFile() {
+    try (FileWriter writer = new FileWriter("products.txt")) {
+        for (Product p : products) {
+            writer.write(
+                p.getId() + "," +
+                p.getName() + "," +
+                p.getPrice() + "," +
+                p.getStockQuantity() + "\n"
+            );
+        }
+    } catch (IOException e) {
+        System.out.println("Dosyaya yazma hatası!");
+    }
+}
+
 }
