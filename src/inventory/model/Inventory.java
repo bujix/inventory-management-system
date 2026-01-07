@@ -75,12 +75,27 @@ public class Inventory {
     }
 
     /**
+     * Ürün ID'sine göre stok miktarını günceller.
+     *
+     * @param productId stok güncellenecek ürünün ID'si
+     * @param amount stok artış veya azalış miktarı
+     */
+    public void updateStock(String productId, int amount) {
+        Product product = findProductById(productId);
+        if (product != null) {
+            product.updateStock(amount);
+        }
+    }
+
+    /**
      * Envantere yeni bir sipariş ekler.
      *
      * @param order eklenecek sipariş
      */
     public void addOrder(Order order) {
-        orders.add(order);
+        if (order != null) {
+            orders.add(order);
+        }
     }
 
     /**
