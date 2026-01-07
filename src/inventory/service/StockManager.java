@@ -8,7 +8,6 @@ import inventory.model.Product;
  * Ürünlerin stok artırma ve azaltma işlemleri bu sınıf üzerinden yapılır.
  *
  * Bu sınıf, business logic'in model katmanından ayrılmasını sağlar.
- * Böylece kodun test edilebilirliği ve sürdürülebilirliği artırılmış olur.
  */
 public class StockManager {
 
@@ -31,21 +30,45 @@ public class StockManager {
      */
     public void increaseStock(String productId, int amount) {
         Product product = inventory.findProductById(productId);
-        if (product != null) {
-            product.updateStock(amount);
+
+        if (product == null) {
+            System.out.println("❌ Ürün bulunamadı.");
+            return;
         }
+
+        if (amount <= 0) {
+            System.out.println("❌ Stok artırma miktarı pozitif olmalıdır.");
+            return;
+        }
+
+        product.updateStock(amount);
     }
 
     /**
      * Belirtilen üründen stok düşer.
+     * Stok miktarının negatif olmasına izin verilmez.
      *
      * @param productId stok azaltılacak ürünün ID bilgisi
      * @param amount azaltılacak stok miktarı
      */
     public void decreaseStock(String productId, int amount) {
         Product product = inventory.findProductById(productId);
-        if (product != null) {
-            product.updateStock(-amount);
+
+        if (product == null) {
+            System.out.println("❌ Ürün bulunamadı.");
+            return;
         }
+
+        if (amount <= 0) {
+            System.out.println("❌ Stok azaltma miktarı pozitif olmalıdır.");
+            return;
+        }
+
+        if (product.getStockQuantity() < amount) {
+            System.out.println("❌ Yetersiz stok! Stok negatif olamaz.");
+            return;
+        }
+
+        product.updateStock(-amount);
     }
 }
